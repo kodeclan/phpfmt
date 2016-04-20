@@ -170,7 +170,7 @@ foreach ($phars as $target) {
 	file_put_contents($target . '.stub.php', '<?php declare (strict_types = 1);' . PHP_EOL . 'namespace {$inPhar = true;} ' . preg_replace('/' . preg_quote('<?php') . '/', '', file_get_contents($target . '.stub.php'), 1));
 	$phar = new Phar($target . '.phar', FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::KEY_AS_FILENAME, $target . '.phar');
 	$phar[$target . '.stub.php'] = file_get_contents($target . '.stub.php');
-	$phar->setStub('#!/usr/bin/env php' . "\n" . $phar->createDefaultStub($target . '.stub.php'));
+	$phar->setStub('#!/usr/bin/env ./ext-bin/php' . "\n" . $phar->createDefaultStub($target . '.stub.php'));
 	file_put_contents($target . '.phar.sha1', sha1_file($target . '.phar'));
 	unlink($target . '.stub.php');
 	unlink($target . '.tmp.src.php');
