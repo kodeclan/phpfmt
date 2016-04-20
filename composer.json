@@ -19,5 +19,18 @@
     "require":{
         "php": ">=7.0.0",
         "ext-tokenizer": "*"
+    },
+    "scripts": {
+        "pre-update-cmd":[
+            "Fmt\\Setup\\PreInstallHook::setupLocalPhpBinary"
+        ],
+        "pre-install-cmd":[
+            "Fmt\\Setup\\PreInstallHook::setupLocalPhpBinary"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Fmt\\Setup\\": "setup/"
+        }
     }
 }
