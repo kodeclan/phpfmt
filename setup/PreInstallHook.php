@@ -24,8 +24,6 @@ class PreInstallHook {
 
         echo "Copy source binary..." . PHP_EOL;
         system(sprintf('cp ./src-ext-bin/php7-static-%s ./ext-bin/php', $phpSourceBinaryName));
-        echo "$ ./ext-bin/php --version" . PHP_EOL;
-        system('./ext-bin/php --version');
         echo "$ Done." . PHP_EOL;
     }
 

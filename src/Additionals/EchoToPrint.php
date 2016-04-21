@@ -31,7 +31,7 @@ final class EchoToPrint extends AdditionalPass {
 				$start = $index;
 				$end = $this->walkUsefulRightUntil($this->tkns, $index, [ST_SEMI_COLON, T_CLOSE_TAG]);
 				$convert = true;
-				for ($i = $start; $i < $end; $i++) {
+				for ($i = $start; $i < $end; ++$i) {
 					$tkn = $this->tkns[$i];
 					if (ST_PARENTHESES_OPEN === $tkn[0]) {
 						$this->refWalkBlock($tkns, $ptr, ST_PARENTHESES_OPEN, ST_PARENTHESES_CLOSE);
@@ -70,5 +70,4 @@ print 2;
 ?>
 EOT;
 	}
-
 }

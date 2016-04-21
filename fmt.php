@@ -8546,7 +8546,7 @@ final class EchoToPrint extends AdditionalPass {
 				$start = $index;
 				$end = $this->walkUsefulRightUntil($this->tkns, $index, [ST_SEMI_COLON, T_CLOSE_TAG]);
 				$convert = true;
-				for ($i = $start; $i < $end; $i++) {
+				for ($i = $start; $i < $end; ++$i) {
 					$tkn = $this->tkns[$i];
 					if (ST_PARENTHESES_OPEN === $tkn[0]) {
 						$this->refWalkBlock($tkns, $ptr, ST_PARENTHESES_OPEN, ST_PARENTHESES_CLOSE);
@@ -8581,7 +8581,6 @@ print 2;
 ?>
 EOT;
 	}
-
 }
 	
 final class EncapsulateNamespaces extends AdditionalPass {
@@ -11191,7 +11190,6 @@ final class RemoveSemicolonAfterCurly extends AdditionalPass {
 			list($id, $text) = $this->getToken($token);
 			$this->ptr = $index;
 			switch ($id) {
-
 			case T_NAMESPACE:
 			case T_CLASS:
 			case T_TRAIT:
@@ -11832,7 +11830,6 @@ final class SpaceAroundControlStructures extends AdditionalPass {
 				$this->appendCode($text);
 				break;
 			}
-
 		}
 
 		return $this->code;

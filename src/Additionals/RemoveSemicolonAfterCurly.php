@@ -32,7 +32,6 @@ final class RemoveSemicolonAfterCurly extends AdditionalPass {
 			list($id, $text) = $this->getToken($token);
 			$this->ptr = $index;
 			switch ($id) {
-
 			case T_NAMESPACE:
 			case T_CLASS:
 			case T_TRAIT:

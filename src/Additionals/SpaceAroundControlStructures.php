@@ -113,7 +113,6 @@ final class SpaceAroundControlStructures extends AdditionalPass {
 				$this->appendCode($text);
 				break;
 			}
-
 		}
 
 		return $this->code;
