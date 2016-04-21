@@ -199,7 +199,7 @@ if (isset($opts['help-pass'])) {
 }
 
 $cache = new CacheDummy();
-$cache_fn = "";
+$cache_fn = '';
 if ($enableCache && isset($opts['cache'])) {
 	$argv = extractFromArgv($argv, 'cache');
 	$cache_fn = $opts['cache'];
@@ -498,13 +498,7 @@ if (isset($opts['i'])) {
 				}
 			}
 
-			$progress = new \Symfony\Component\Console\Helper\ProgressBar(
-				new \Symfony\Component\Console\Output\StreamOutput(fopen('php://stderr', 'w')),
-				sizeof(iterator_to_array($files))
-			);
-			$progress->start();
 			foreach ($files as $file) {
-				$progress->advance();
 				$file = $file[0];
 				if (null !== $ignore_list) {
 					foreach ($ignore_list as $pattern) {
@@ -513,6 +507,8 @@ if (isset($opts['i'])) {
 						}
 					}
 				}
+
+				fwrite(STDERR, '.');
 
 				++$fileCount;
 				if ($concurrent) {
@@ -563,7 +559,6 @@ if (isset($opts['i'])) {
 				$chn_done->close();
 				$chn->close();
 			}
-			$progress->finish();
 			fwrite(STDERR, PHP_EOL);
 
 			continue;

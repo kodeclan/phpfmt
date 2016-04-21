@@ -20,7 +20,7 @@ if (ini_get('phar.readonly')) {
 	passthru($_SERVER['_'] . ' -dphar.readonly=0 build.php ' . implode(' ', $argv) . ' 2>&1', $ret);
 	exit($ret);
 }
-require 'vendor/dericofilho/csp/csp.php';
+require 'vendor/ccirello/csp/csp.php';
 require 'Core/constants.php';
 require 'Core/FormatterPass.php';
 require 'Additionals/AdditionalPass.php';
@@ -172,7 +172,7 @@ foreach ($phars as $target) {
 	$phar[$target . '.stub.php'] = file_get_contents($target . '.stub.php');
 	$phar->setStub('#!/usr/bin/env php' . "\n" . $phar->createDefaultStub($target . '.stub.php'));
 	file_put_contents($target . '.phar.sha1', sha1_file($target . '.phar'));
-	unlink($target . '.stub.php');
+	//unlink($target . '.stub.php');
 	unlink($target . '.tmp.src.php');
 }
 echo 'done', PHP_EOL;

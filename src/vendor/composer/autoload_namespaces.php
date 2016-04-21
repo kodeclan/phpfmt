@@ -6,9 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Satooshi\\Component' => array($vendorDir . '/satooshi/php-coveralls/src'),
-    'Satooshi\\Bundle' => array($vendorDir . '/satooshi/php-coveralls/src'),
-    'Psr\\Log\\' => array($vendorDir . '/psr/log'),
-    'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
-    'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
 );
