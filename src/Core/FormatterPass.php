@@ -919,7 +919,7 @@ abstract class FormatterPass {
 			}
 		}
 
-		return;
+		return count($tkns);
 	}
 
 	private function calculateCacheKey(string $direction, array $ignoreList): string {
