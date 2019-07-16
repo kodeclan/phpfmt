@@ -4,9 +4,7 @@ phpfmt
 ***[This project follows a Code of Conduct.](https://github.com/phpfmt/code-of-conduct)***
 
 ## Build statuses
-- Master: [![Build Status](https://travis-ci.org/phpfmt/fmt.svg?branch=master)](https://travis-ci.org/phpfmt/fmt)
-
-[![Throughput Graph](https://graphs.waffle.io/phpfmt/fmt/throughput.svg)](https://waffle.io/phpfmt/fmt/metrics)
+- Master: [![Build Status](https://travis-ci.org/kodeclan/phpfmt.svg?branch=master)](https://travis-ci.org/kodeclan/phpfmt)
 
 ## Requirements
 - PHP >= 7.0.0 to run the formatter. Note that the formatter can parse and format even a PHP file version 4 in case needed. HHVM is not supported.
