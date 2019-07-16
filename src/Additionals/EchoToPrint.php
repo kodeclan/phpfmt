@@ -34,9 +34,9 @@ final class EchoToPrint extends AdditionalPass {
 				for ($i = $start; $i < $end; $i++) {
 					$tkn = $this->tkns[$i];
 					if (ST_PARENTHESES_OPEN === $tkn[0]) {
-						$this->refWalkBlock($tkns, $ptr, ST_PARENTHESES_OPEN, ST_PARENTHESES_CLOSE);
+						$this->refWalkBlock($this->tkns, $this->ptr, ST_PARENTHESES_OPEN, ST_PARENTHESES_CLOSE);
 					} elseif (ST_BRACKET_OPEN === $tkn[0]) {
-						$this->refWalkBlock($tkns, $ptr, ST_BRACKET_OPEN, ST_BRACKET_CLOSE);
+						$this->refWalkBlock($this->tkns, $this->ptr, ST_BRACKET_OPEN, ST_BRACKET_CLOSE);
 					} elseif (ST_COMMA === $tkn[0]) {
 						$convert = false;
 						break;
